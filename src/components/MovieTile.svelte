@@ -1,13 +1,13 @@
 <script>
 export let movieTitle;
 export let movieUrl;
-export let movieImg;
+export let moviePoster;
 
 </script>
 
 <tile>
 <div class="container">
-    <div class="img"><img src={movieImg} alt=""></div>
+    <div class="img"><img src={moviePoster} alt=""></div>
     <a href={movieUrl}>
         <div class="title">{movieTitle}</div>
     </a>
@@ -20,9 +20,10 @@ export let movieImg;
     align-items: center;
     justify-content: space-evenly;
     background-color: antiquewhite;
-    margin-bottom: 2rem;
     padding: 2%;
     border-radius: 2rem;
+    max-width: 618px;
+    margin: 2rem auto;
 }
 img{
     max-width:200px; 

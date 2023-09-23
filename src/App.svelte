@@ -7,16 +7,18 @@
   let movieList = [];
   let movieData = null; // Define movieData at the component level
   let searchValue = 'war';
+  let apiKey = process.env.OMDB_API_KEY;
+
 const handleInput = (e) => {
   searchValue = e.target.value
 }
   const searchData = async () => {
-    const url = `https://api.consumet.org/movies/dramacool/${searchValue}`;
+    const url = `https://omdbapi.com/?s=${searchValue}&apikey=${apiKey}`;
 console.log(url)
     try {
       const response = await axios.get(url);
-      movieList = response.data.results;
-      console.log(movieList);
+      movieList = response.data.Search;
+      console.log(response.data);
     } catch (err) {
       console.error(err.message);
     }
@@ -55,7 +57,7 @@ console.log(url)
     {/if}
     {#each movieList as movie}
     {#if movie}
-      <MovieTile movieTitle={movie.title} movieUrl={movie.url} movieImg={movie.image}/>
+      <MovieTile movieTitle={movie.Title} moviePoster={movie.Poster} movieImg={movie.image}/>
     {:else}
       <p>not found</p>
     {/if}
