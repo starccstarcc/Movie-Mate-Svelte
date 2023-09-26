@@ -1,6 +1,6 @@
 # MovieMate 🎞️
 
-[MovieMate](#) is Svelte app for rating movie/series and submit your own rating.
+[MovieMate](#) is a Svelte app for rating movie/series and submiting your own rating.
 
 ## Main features
 
