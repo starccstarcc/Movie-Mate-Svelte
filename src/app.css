@@ -46,6 +46,16 @@ h1 {
   padding: 2rem;
   text-align: center;
 }
+.controlls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+input {
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  padding: 0.8rem;
+}
 
 button {
   border-radius: 8px;
@@ -58,7 +68,8 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
+button:hover,
+input:hover {
   border-color: #646cff;
 }
 button:focus,

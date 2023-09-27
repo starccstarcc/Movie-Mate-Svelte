@@ -1,21 +1,21 @@
 <script>
-export let movieTitle;
-export let movieUrl;
-export let moviePoster;
-
+  export let movie;
 </script>
 
 <tile>
-<div class="container">
-    <div class="img"><img src={moviePoster} alt=""></div>
-    <a href={movieUrl}>
-        <div class="title">{movieTitle}</div>
+  <div class="container">
+    <div class="img"><img src={movie.Poster} alt="" /></div>
+    <a href={movie.Url}>
+      <div class="title">{movie.Title}</div>
     </a>
-</div>
+  </div>
 </tile>
 
 <style>
-.container{
+  tile {
+    cursor: pointer;
+  }
+  .container {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -24,10 +24,9 @@ export let moviePoster;
     border-radius: 2rem;
     max-width: 618px;
     margin: 2rem auto;
-}
-img{
-    max-width:200px; 
+  }
+  img {
+    max-width: 200px;
     border-radius: 2rem;
-
-}
+  }
 </style>
