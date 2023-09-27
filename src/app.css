@@ -2,7 +2,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
+  scroll-behavior: smooth !important;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -86,6 +86,76 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+main {
+  text-align: center;
+  padding: 1em;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #ff3e00;
+  text-transform: uppercase;
+  font-size: 4em;
+  font-weight: 100;
+}
+tile {
+  cursor: pointer;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 2%;
+  border-radius: 2rem;
+  max-width: 618px;
+}
+img {
+  max-height: 335px;
+  border-radius: 2rem;
+}
+.overlay-container {
+  height: 400px;
+  animation-name: expand;
+  animation-duration: 1s;
+  margin: 3rem 0 2rem 0;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.overlay-content {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.overlay-content img {
+  max-height: 200px;
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+@keyframes expand {
+  from {
+    opacity: 0;
+    margin: 0rem 0 2rem 0;
+    height: 200px;
+  }
+  to {
+    margin: 3rem 0 2rem 0;
+    opacity: 1;
+    height: 400px;
+  }
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -96,5 +166,11 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@media (min-width: 640px) {
+  main {
+    max-width: none;
   }
 }

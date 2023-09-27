@@ -6,14 +6,15 @@
   import axios from "axios";
 
   let movieList = [];
-  let movieData = null; // Define movieData at the component level
+  let movieData = null;
   let searchValue = "";
   let apiKey = import.meta.env.VITE_OMDB_API_KEY;
   let errors = "";
   let selectedMovie = null;
+
   const handleInput = (e) => {
     searchValue = e.target.value;
-    searchData();
+    searchValue?.length > 0 ? searchData() : (errors = "");
   };
   const searchData = async () => {
     const url = `https://omdbapi.com/?s=${searchValue}&apikey=${apiKey}`;
@@ -21,6 +22,7 @@
     const response = await axios.get(url);
     if (response.data.Response === "True") {
       movieList = response.data.Search;
+      console.log("movieList: ", response.data);
       errors = "";
     } else {
       console.log("error: ", response.data.Error);
@@ -44,7 +46,8 @@
 
   function handleMovieClick(movie) {
     selectedMovie = movie;
-    console.log("selectedMovie: ", selectedMovie);
+    window.scrollTo(0, 0);
+    console.log(window.scroll);
   }
 
   function handleCloseOverlay() {
@@ -94,24 +97,3 @@
     {/if}
   </div>
 </main>
-
-<style>
-  main {
-    text-align: center;
-    padding: 1em;
-    margin: 0 auto;
-  }
-
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
-  }
-</style>
