@@ -7,8 +7,8 @@
   let movieList = [];
   let movieData = null; // Define movieData at the component level
   let searchValue = 'war';
-  let apiKey = process.env.OMDB_API_KEY;
-
+  let apiKey = import.meta.env.VITE_OMDB_API_KEY;
+console.log("api key: ",apiKey)
 const handleInput = (e) => {
   searchValue = e.target.value
 }
