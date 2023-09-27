@@ -5,29 +5,21 @@
   const dispatch = createEventDispatcher();
 
   function closeOverlay() {
-    dispatch("closeOverlay"); // Emit a custom event
+    dispatch("closeOverlay");
   }
 </script>
 
 <overlay>
-  <div class="container">
-    <div class="img"><img src={selectedMovie.Poster} alt="" /></div>
-    <a href={selectedMovie.Url}>
-      <div class="title">{selectedMovie.Title}</div>
-    </a>
+  <div class="overlay-container">
+    <div class="overlay-content">
+      <div class="img"><img src={selectedMovie.Poster} alt="" /></div>
+      <a href={selectedMovie.Url}>
+        <div class="title">{selectedMovie.Title}</div>
+      </a>
+      <button class="close-button" on:click={closeOverlay}>&times;</button>
+    </div>
   </div>
 </overlay>
-
-<div class="overlay-container">
-  <div class="overlay-content">
-    <h2>Your Overlay Content</h2>
-    <p>
-      This is a simple overlay with a blur effect and a nice design. You can
-      customize it further.
-    </p>
-    <button class="close-button" on:click={closeOverlay}>&times;</button>
-  </div>
-</div>
 
 <style>
   .overlay-container {

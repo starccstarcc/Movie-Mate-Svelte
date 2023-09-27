@@ -78,17 +78,17 @@
       <h5>
         ({movieList.length} results)
       </h5>
-      <ul>
+      <div class="movie-list">
         {#each movieList as movie}
           {#if movie}
-            <button on:click={handleMovieClick(movie)}>
+            <button class="tile-button" on:click={handleMovieClick(movie)}>
               <MovieTile {movie} />
             </button>
           {:else}
             <p>not found</p>
           {/if}
         {/each}
-      </ul>
+      </div>
     {:else}
       <p>{errors}</p>
     {/if}

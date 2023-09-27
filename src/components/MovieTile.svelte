@@ -19,14 +19,12 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    background-color: antiquewhite;
     padding: 2%;
     border-radius: 2rem;
     max-width: 618px;
-    margin: 2rem auto;
   }
   img {
-    max-width: 200px;
+    max-height: 335px;
     border-radius: 2rem;
   }
 </style>

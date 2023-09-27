@@ -56,6 +56,15 @@ input {
   border-radius: 1rem;
   padding: 0.8rem;
 }
+.tile-button {
+  width: 400px;
+  height: 400px;
+}
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
 button {
   border-radius: 8px;
