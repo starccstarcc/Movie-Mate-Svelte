@@ -27,6 +27,11 @@
     } else {
       console.log("error: ", response.data.Error);
       errors = response.data.Error;
+      if (response.data.Error === "Too many results.") {
+        errors = errors + " Please keep typing!";
+      } else if (response.data.Error === "Movie not found!") {
+        errors = errors + " Please check your spelling.";
+      }
       movieList = [];
     }
   };
