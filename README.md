@@ -18,7 +18,7 @@ Live Preview: https://movie-mate-bb34d.web.app/
 
 ## Installation
 
-1. Clone this project `https://github.com/WesamAbadi/MovieMate` and cd into it `cd MovieMate`
+1. Clone this project `https://github.com/startccstarcc/Movie-Mate-Svelte` and cd into it `cd MovieMate`
 2. Add your APIs & firebase configs into `.env` file created at the root folder.
 3. Install Requirements `npm i`
 4. Run the application `npm run start`
